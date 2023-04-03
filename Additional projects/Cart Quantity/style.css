@@ -1,0 +1,13 @@
+.button_show {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.button_resert {
+    display: block;
+    margin-top: 5px;
+}
+
+.add {
+  margin-bottom: 5px;
+}

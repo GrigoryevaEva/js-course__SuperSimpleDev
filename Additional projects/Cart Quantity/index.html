@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Cart Quantity</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <p>
+      Cart Quantity
+    </p>
+
+    <button class="button_show" onclick="
+    console.log(`Cart Quantity: ${cartQuantity}`);
+    ">
+      Show Quantity
+    </button>
+
+    <div class="add">
+      <button onclick="
+      cartQuantity++;
+      console.log(`Cart Quantity: ${cartQuantity}`);
+      ">
+        Add to Cart
+      </button>
+
+      <button onclick="
+      cartQuantity += 2;
+      console.log(`Cart Quantity: ${cartQuantity}`);
+      ">
+        +2
+      </button>
+
+      <button onclick="
+      cartQuantity += 3;
+      console.log(`Cart Quantity: ${cartQuantity}`);
+      ">
+        +3
+      </button>
+
+      <button onclick="
+      cartQuantity += 4;
+      console.log(`Cart Quantity: ${cartQuantity}`);
+      ">
+        +4
+      </button>
+
+      <button onclick="
+      cartQuantity += 5;
+      console.log(`Cart Quantity: ${cartQuantity}`);
+      ">
+        +5
+      </button>
+    </div>
+
+    <div class="delete">
+      <button onclick="
+      if (cartQuantity > 0) cartQuantity--;
+      console.log(`Cart Quantity: ${cartQuantity}`);
+      ">
+        Remove from Cart
+      </button>
+
+      <button onclick="
+      cartQuantity -= 2;
+      console.log(`Cart Quantity: ${cartQuantity}`);
+      ">
+        -2
+      </button>
+
+      <button onclick="
+      cartQuantity -= 3;
+      console.log(`Cart Quantity: ${cartQuantity}`);
+      ">
+        -3
+      </button>
+    </div>
+    
+    <button class="button_resert" onclick="
+    cartQuantity = 0;
+    console.log(`Cart was reset.`);
+    console.log(`Cart Quantity: ${cartQuantity}`);
+    ">
+      Resert Cart
+    </button>
+  </body>
+</html>
