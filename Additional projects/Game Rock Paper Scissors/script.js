@@ -1,4 +1,11 @@
 "use strict";
+const variantsMove = ["rock", "paper", "scissors"];
+
+let resultsGame = {
+  wins: 0,
+  losses: 0,
+  ties: 0,
+};
 
 function pickComputerMove(variantsMove) {
   return variantsMove[Math.floor(Math.random() * 3)];
@@ -33,7 +40,6 @@ function comparisonMoves(userMove, computerMove) {
 };
 
 function getResultGame(userMove) {
-  const variantsMove = ["rock", "paper", "scissors"];
   const computerMove = pickComputerMove(variantsMove);
   let result = comparisonMoves(userMove, computerMove);
   return console.log(
