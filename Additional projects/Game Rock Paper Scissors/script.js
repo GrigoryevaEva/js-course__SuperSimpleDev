@@ -1,30 +1,42 @@
 "use strict";
 
-function game(userMove) {
-  let variantsMove = ["rock", "paper", "scissors"];
-  let computerMove = variantsMove[Math.floor(Math.random() * 3)];
+function pickComputerMove(variantsMove) {
+  return variantsMove[Math.floor(Math.random() * 3)];
+};
+
+function comparisonMoves(userMove, computerMove) {
+  let result = "";
 
   if (userMove === "rock") {
     if (computerMove === "paper") {
-      console.log("You picked rock. Computer picked paper. You lose.");
+      result = "You lose.";
     } else if (computerMove === "scissors") {
-      console.log("You picked rock. Computer picked scissors. You win.");
-    } else console.log("You picked rock. Computer picked rock. Tie.");
-  };
+      result = "You win.";
+    } else result = "Tie.";
 
-  if (userMove === "paper") {
+  } else if (userMove === "paper") {
     if (computerMove === "scissors") {
-      console.log("You picked rock. Computer picked scissors. You lose.");
+      result = "You lose.";
     } else if (computerMove === "rock") {
-      console.log("You picked rock. Computer picked rock. You win.");
-    } else console.log("You picked rock. Computer picked paper. Tie.");
+      result = "You win.";
+    } else result = "Tie.";
+
+  } else if (userMove === "scissors") {
+    if (computerMove === "rock") {
+      result = "You lose.";
+    } else if (computerMove === "paper") {
+      result = "You win.";
+    } else result = "Tie.";
   };
 
-  if (userMove === "scissors") {
-    if (computerMove === "rock") {
-      console.log("You picked rock. Computer picked rock. You lose.");
-    } else if (computerMove === "paper") {
-      console.log("You picked rock. Computer picked paper. You win.");
-    } else console.log("You picked rock. Computer picked scissors. Tie.");
-  };
+  return result;
+};
+
+function getResultGame(userMove) {
+  const variantsMove = ["rock", "paper", "scissors"];
+  const computerMove = pickComputerMove(variantsMove);
+  let result = comparisonMoves(userMove, computerMove);
+  return console.log(
+    `You picked ${userMove}. Computer picked ${computerMove}. ${result}`
+  );
 };

@@ -8,12 +8,12 @@ function calc (i) {
   console.log(calculation);
 };
 
-let equal = () => {
+function equal () {
   calculation = eval(calculation);
   console.log(calculation);
 };
 
-let hui = () => {
-  calculation = '';
+function remove () {
+  calculation = "";
   console.log(calculation);
 };
